@@ -1,0 +1,379 @@
+body {
+  background: whitesmoke;
+}
+.buyticket-button {
+  margin-left: 320px;
+}
+.homeTab {
+  margin-left: 400px;
+}
+.navBar {
+  background: linear-gradient(
+    90deg,
+    rgba(72, 186, 183, 1) 0%,
+    rgba(23, 227, 228, 1) 16%,
+    rgba(23, 168, 228, 1) 79%,
+    rgba(3, 26, 224, 1) 100%
+  );
+}
+.footerbackground {
+  background: linear-gradient(
+    90deg,
+    rgba(72, 186, 183, 1) 0%,
+    rgba(23, 227, 228, 1) 16%,
+    rgba(23, 168, 228, 1) 79%,
+    rgba(3, 26, 224, 1) 100%
+  );
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  height: 200px;
+  padding-top: 25px;
+  margin-top: 30px;
+}
+
+.colContent {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+}
+
+.listtext {
+  color: beige;
+}
+
+.listtext2 {
+  color: rgb(231, 231, 190);
+}
+.firstCol {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+.SMLT {
+  border-width: 0.2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.SMLT:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  border: 1px solid;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border-color: black;
+  background-color: rgb(151, 237, 243);
+}
+
+.SMLF {
+  border-width: 0.2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.SMLF:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  border: 1px solid;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border-color: black;
+  background-color: rgb(7, 103, 247);
+}
+
+.SMLI {
+  border-width: 0.2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.SMLI:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  border: 1px solid;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border-color: black;
+  background-color: rgb(243, 174, 237);
+}
+
+.SMLW {
+  border-width: 0.2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.SMLW:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  border: 1px solid;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border-color: black;
+  background-color: rgb(56, 247, 82);
+}
+.routeFilter {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  margin-top: 46px;
+  height: 450px;
+  background-image: url(https://c8.alamy.com/comp/2CX2XF7/vector-bus-station-intercity-buses-on-the-background-of-the-cityscape-in-the-distance-modern-flat-vector-illustration-for-banner-poster-flyer-or-l-2CX2XF7.jpg);
+}
+
+/* navbar css */
+
+.homeIcon {
+  border-width: 0.2px;
+  height: 50px;
+  width: 120px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.homeIcon:hover {
+  border-width: 0.2px;
+  height: 50px;
+  width: 120px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #108696;
+  transition: 0.5s;
+  transform: translate(4px);
+}
+
+.aboutUSIcon {
+  border-width: 0.2px;
+  height: 50px;
+  width: 120px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.aboutUSIcon:hover {
+  border-width: 0.2px;
+  height: 50px;
+  width: 120px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #108696;
+  transition: 0.5s;
+  transform: translateY(2px);
+}
+
+.contactUsIcon {
+  border-width: 0.2px;
+  height: 50px;
+  width: 120px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.contactUsIcon:hover {
+  border-width: 0.2px;
+  height: 50px;
+  width: 120px;
+  border-radius: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #108696;
+  transition: 0.5s;
+  transform: translate(-4px);
+}
+.ticketPrice {
+  color: rgb(49, 241, 49);
+}
+.modelBody {
+  width: 100%;
+  height: 100%;
+}
+.seatImage {
+  height: 60px;
+  width: 60px;
+  transform: rotate(90deg);
+}
+.seatNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.seatWithNumber {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.seatWithNumber:hover {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgb(25, 247, 217);
+}
+.seatWithNumber:active {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgb(100, 236, 15);
+}
+.seatWithNumber:visited {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgb(238, 16, 201);
+}
+.seatWithNumberButton {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: white;
+}
+.seatWithNumberButton:hover {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgb(119, 241, 19);
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.seatWithNumberButton:focus {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgb(108, 241, 19);
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.seatWithNumberButton:checked {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgb(108, 241, 19);
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.seatWithNumberSelected {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: rgb(15, 247, 15);
+}
+.seatWithNumberSelectedByMale {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: rgb(35, 49, 245);
+}
+.seatWithNumberSelectedByFemale {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: rgb(243, 13, 224);
+}
+.seatWithNumberSelectedByChild {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: rgb(243, 247, 10);
+}
+.displaySeatCatogery {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerforSelectSeat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seatWithNumberReserved {
+  position: relative;
+  border: 0.1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background-color: rgb(248, 10, 10);
+}
