@@ -133,7 +133,16 @@ form .button input {
  #checkbox1 span{
      color:#ccc;
 }
-
-#checkbox1 input{
+.signin .freeze{
+color:#686868;
     
+}
+
+
+.signin input {
+  border-radius: 5px;
+  width:auto;
+  background-color: #fff;
+  color:#686868;
+  
 }
