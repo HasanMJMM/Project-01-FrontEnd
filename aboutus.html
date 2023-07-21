@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleabt.css">
+    <title>About Us</title>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>About Us</h1>
+        <p><b>Our aim is to provide long-distance travelers with the convenience
+                of booking bus seats to anywhere in Sri Lanka from a single, centralized platform.</b></p>
+
+    </div>
+    <div class="container">
+        <section class="about">
+            <div class="about-image">
+                <img src="about us bus.jpeg" alt="">
+            </div>
+            <div class="about-content">
+                
+                <p>At CityTravels, we are passionate about providing you with a seamless and hassle-free
+                    bus ticket booking experience. Our mission is to connect travelers to their desired destinations
+                    with comfort, safety, and efficiency. CityTravels is a revolutionary bus ticket booking platform,
+                    established with a mission to provide travelers with a seamless and hassle-free experience.
+                    Our extensive network of bus routes connects cities and towns across Sri Lanka,
+                    offering easy online booking with flexible ticket options. We prioritize your safety and
+                    comfort by partnering with reputable bus operators, and our real-time updates keep you informed
+                    throughout your journey.<span id="dots">...</span><span id="more">
+                        With 24/7 customer support and a dedicated team, we are committed to delivering delightful
+                        travel experiences and invite you to join us on this exciting adventure.<br>
+
+                        CityTravels is your convenient bus ticket booking platform, aiming to revolutionize the way
+                        travelers book their journeys. Our user-friendly website and mobile app make booking easy,
+                        while an extensive route network covers cities and towns throughout Sri Lanka. With a focus on
+                        safety and comfort, we partner with reputable bus operators and
+                        provide real-time updates on bus timings. Our commitment to excellent service is backed by
+                        round-the-clock customer support, ensuring you have a memorable and worry-free travel
+                        experience.
+                        Join CityTravels today and discover the ease and convenience of bus ticket booking with
+                        us!</span></p>
+
+                <button onclick="myFunction()" id="myBtn" class="read-more">Read more</button>
+
+                <script>
+                    function myFunction() {
+                        var dots = document.getElementById("dots");
+                        var moreText = document.getElementById("more");
+                        var btnText = document.getElementById("myBtn");
+
+                        if (dots.style.display === "none") {
+                            dots.style.display = "inline";
+                            btnText.innerHTML = "Read more";
+                            moreText.style.display = "none";
+                        } else {
+                            dots.style.display = "none";
+                            btnText.innerHTML = "Read less";
+                            moreText.style.display = "inline";
+                        }
+                    }
+                </script>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
