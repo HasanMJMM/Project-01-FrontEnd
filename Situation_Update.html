@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conductor Location Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+        footer {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conductor Location Update</h1>
+    </header>
+    <main>
+        <form id="locationForm">
+            <label for="conductorID">Time:</label>
+            <input type="text" id="conductorID" name="conductorID" required>
+
+            <label for="latitude">Current Position:</label>
+            <input type="text" id="latitude" name="latitude" required>
+
+            <label for="longitude">Special Notice:</label>
+            <input type="text" id="longitude" name="longitude" required>
+
+            <a href="Situation Update 2.html"><input type="submit" value="Update Location"></a>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Conductor Location Update. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
