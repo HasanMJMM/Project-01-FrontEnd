@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/conductourMI.css" />
+  </head>
+  <body>
+    <div class="row QRcard mt-3">
+      <div class="col-8 QRcard mt-2">
+        <div class="card text-center mb-3" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">Scan Qr code</h5>
+            <p class="card-text">
+              <!--QR code Scaner Intergration Start-->
+              <script type="text/javascript">
+                function onScanSuccess(qrCodeMessage) {
+                    document.getElementById("result").value = qrCodeMessage;
+                    showHint(qrCodeMessage);
+                playAudio();
+                
+                }
+                function onScanError(errorMessage) {
+                  //handle scan error
+                }
+                var html5QrcodeScanner = new Html5QrcodeScanner(
+                    "reader", { fps: 10, qrbox: 250 });
+                html5QrcodeScanner.render(onScanSuccess, onScanError);
+                
+                </script>
+              <!--QR code Scanner Intergration End-->
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
