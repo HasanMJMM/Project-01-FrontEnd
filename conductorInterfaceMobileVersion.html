@@ -25,21 +25,7 @@
             <h5 class="card-title">Scan Qr code</h5>
             <p class="card-text">
               <!--QR code Scaner Intergration Start-->
-              <script type="text/javascript">
-                function onScanSuccess(qrCodeMessage) {
-                    document.getElementById("result").value = qrCodeMessage;
-                    showHint(qrCodeMessage);
-                playAudio();
-                
-                }
-                function onScanError(errorMessage) {
-                  //handle scan error
-                }
-                var html5QrcodeScanner = new Html5QrcodeScanner(
-                    "reader", { fps: 10, qrbox: 250 });
-                html5QrcodeScanner.render(onScanSuccess, onScanError);
-                
-                </script>
+              
               <!--QR code Scanner Intergration End-->
             </p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
