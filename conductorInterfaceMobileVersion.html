@@ -15,24 +15,69 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./css/conductourMI.css" />
   </head>
   <body>
+    <!--Ticket Generattion Form Start-->
+    <div class="row ticketGenarator">
+        <div class="col text-center ticketGenarator mt-5">
+            <div class="card text-center mb-3" style="width: 18rem">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <label for="exampleFormControlInput1" class="form-label">From : </label>
+                            <select class="form-select form-select-sm" aria-label="Large select example">
+                                <option selected>Current Location</option>
+                                <option value="1">Badulla</option>
+                                <option value="2">Kandy</option>
+                                <option value="3">Colombo</option>
+                              </select>
+                        </div>
+                        <div class="col">
+                            <label for="exampleFormControlInput1" class="form-label">To : </label>
+                            <select class="form-select form-select-sm" aria-label="Large select example">
+                                <option selected>Colombo</option>
+                                <option value="1">Badulla</option>
+                                <option value="2">Kandy</option>
+                                <option value="3">Colombo</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col text-center">
+                            <a href="#" class="btn btn-outline-success">Issue Ticket</a>
+                        </div>
+                    </div>
+                </div>
+                </div>         
+        </div>
+    </div>
+
+    <!--Ticket Generation Form End-->
+
+    <!--QR part-->
     <div class="row QRcard mt-3">
       <div class="col QRcard mt-2">
         <div class="card text-center mb-3" style="width: 18rem">
           <div class="card-body">
-            <h5 class="card-title">Scan Qr code</h5>
-            <p class="card-text">
-
-
-
-                
+            <h5 class="card-title">Varify the Tickets</h5>
+            <p class="card-text">               
               
               <!--Qr Pop Up Start-->
               <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
+            <button type="button" class="btn btn-info QrScanerButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="col text-center">
+                    <div class="row mt-2 mb-0">
+                        <h4 style="color: #fff;">Scan QR</h4>                        
+                    </div>
+                    <div class="row text-center qrIcon mt-0 mb-lg-0">
+                        <div class="col">
+                        <ion-icon name="scan-circle-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
             </button>
             
             <!-- Modal -->
@@ -40,7 +85,7 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Scan QR Code</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -84,19 +129,12 @@
                             </script>
                             <!--QR code Scanner Intergration End-->
             </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-outline-success">Issue Ticket</a>
           </div>
         </div>
       </div>
     </div>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+
               <!--Qr pop up End-->
 
               

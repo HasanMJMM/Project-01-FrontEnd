@@ -8,3 +8,24 @@
   height: 250px;
   width: 250px;
 }
+.QrScanerButton {
+  height: auto;
+  width: 200px;
+}
+.QrScanerButton:hover {
+  background-color: rgb(88, 88, 230);
+  transition: 0.5s;
+  transform: scale(1.09);
+}
+.qrIcon {
+  margin-top: -50px;
+  font-size: 5.5rem;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+.ticketGenarator {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
