@@ -19,19 +19,86 @@
   </head>
   <body>
     <div class="row QRcard mt-3">
-      <div class="col-8 QRcard mt-2">
+      <div class="col QRcard mt-2">
         <div class="card text-center mb-3" style="width: 18rem">
           <div class="card-body">
             <h5 class="card-title">Scan Qr code</h5>
             <p class="card-text">
-              <!--QR code Scaner Intergration Start-->
+
+
+
+                
               
-              <!--QR code Scanner Intergration End-->
+              <!--Qr Pop Up Start-->
+              <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                                    <!--QR Code Intergration Start-->
+                                    <script src="./js/qr.js"></script>
+                            <style>
+                            .result{
+                                background-color: green;
+                                color:#fff;
+                                padding:20px;
+                            }            
+                            </style>
+
+
+                            <div class="row">
+                            <div class="col">
+                                <div style="width: auto;" id="reader"></div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col" style="padding:30px;">
+                                <h4>SCAN RESULT</h4>
+                                <div id="result">Result Here</div>
+                            </div>
+                            </div>
+
+
+                            <script type="text/javascript">
+                            function onScanSuccess(qrCodeMessage) {
+                                document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+                            }
+
+                            function onScanError(errorMessage) {
+                            //handle scan error
+                            }
+
+                            var html5QrcodeScanner = new Html5QrcodeScanner(
+                                "reader", { fps: 10, qrbox: 250 });
+                            html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+                            </script>
+                            <!--QR code Scanner Intergration End-->
             </p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
     </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+              <!--Qr pop up End-->
+
+              
   </body>
 </html>

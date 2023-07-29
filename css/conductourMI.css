@@ -3,3 +3,8 @@
   justify-content: center;
   align-items: center;
 }
+
+.reader {
+  height: 250px;
+  width: 250px;
+}
