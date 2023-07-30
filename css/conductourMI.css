@@ -1,3 +1,8 @@
+body {
+  padding: 0px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 .QRcard {
   display: flex;
   justify-content: center;
@@ -28,4 +33,48 @@
   align-items: center;
   justify-content: center;
   display: flex;
+}
+.nextLocationIcon {
+  font-size: 2rem;
+}
+.currentLocationText {
+  font-size: 0.5rem;
+}
+.cardforLocation {
+  width: 130px;
+  padding: 0px;
+  background: rgb(255, 240, 11);
+  background: radial-gradient(
+    circle,
+    rgba(255, 240, 11, 1) 0%,
+    rgba(249, 251, 210, 1) 100%
+  );
+}
+.locationAndSosbody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardforSOS {
+  width: 130px;
+  padding: 0px;
+  background: rgb(255, 19, 11);
+  background: radial-gradient(
+    circle,
+    rgba(255, 19, 11, 1) 0%,
+    rgba(251, 215, 210, 1) 100%
+  );
+}
+.forSosAndLocationButtons {
+  justify-content: space-between 10px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.sosText {
+  margin-top: 3.2px;
+}
+.sosButton {
+  display: flex;
+  justify-content: space-between 1px;
+  align-items: center;
 }
