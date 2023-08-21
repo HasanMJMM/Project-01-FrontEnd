@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mb-lg-0 ml-auto">
             <li class="nav-item homeTab homeIcon">
-              <a class="nav-link" aria-current="page" href="commanUser.html" >
+              <a class="nav-link" aria-current="page" href="commanUser.php" >
                 <span class="coustomIcon ">
                     <ion-icon name="home-outline"></ion-icon>
                 </span>
@@ -50,7 +50,7 @@
               </a>
             </li>
             <li class="nav-item aboutUSIcon">
-                <a class="nav-link" aria-current="page" href="aboutus.html">
+                <a class="nav-link" aria-current="page" href="aboutus.php">
                     <span class="coustomIcon">
                         <ion-icon name="accessibility-outline"></ion-icon>
                     </span>
@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li class="nav-item contactUsIcon ">
-                <a class="nav-link" aria-current="page" href="contactus.html">
+                <a class="nav-link" aria-current="page" href="contactus.php">
                     <span class="coustomIcon">
                         <ion-icon name="headset-outline"></ion-icon>
                     </span>
@@ -70,7 +70,7 @@
                 </a>
             </li>            
           </ul>
-          <a href="findTickets.html">         
+          <a href="findTickets.php">         
             <button class="btn btn-outline-warning buyticket-button" type="submit" >
               Buy Tickets
             </button>
@@ -126,7 +126,7 @@
             <div class="row text-center">
                 <div class="col-3"></div>                
                 <div class="col">
-                    <a href="signinup.html">
+                    <a href="signinup.php">
                     <button type="button" class="btn btn-outline-success">Sign IN</button>
                     </a>
                 </div>
@@ -869,7 +869,7 @@
             </div>
             </div>
             <div class="checkout mt-3">
-                <a href="checkout.html">
+                <a href="checkout.php">
                 <button class="btn btn-outline-primary"> Proceed to Checkout</button>
                 </a>
             </div>
