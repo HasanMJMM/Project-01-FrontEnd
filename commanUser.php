@@ -1,3 +1,15 @@
+<?php
+require_once('classes/dbConnectorV.php');
+
+$host = "localhost";
+$database = "journey_ease";
+$username = "root";
+$password = "";
+
+// Create a new Database instance
+$databaseObj = new Database($host, $database, $username, $password);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +29,7 @@
 <body>
     <!--Nav bar start-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary navBar">
-        
+
         <div class="container-fluid">
             <a class="navbar-brand Logo-TravelEase logoTravelEase" href="#"><img class="LogoImage" src="./Images/2.png"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +80,7 @@
     <!---Nav bar End-->
     <!--Body Part Starts-->
     <!--Ticket Filter Form Start-->
-    
+
     <div class="b-example-divider"></div>
 
     <div class="routeFilter">
@@ -76,7 +88,7 @@
             <div class="bannerbacgground">
                 <img class="bannerbacgground" src="./Images/2.png">
             </div>
-            <div class="col-lg-7 text-center text-lg-start BannerTextBody">                
+            <div class="col-lg-7 text-center text-lg-start BannerTextBody">
                 <h1 class="text text-lg-start BannerTitle">It is far more easier to Traval</h1>
                 <p>Travel with EaseTravales</p>
             </div>
@@ -883,14 +895,14 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <!--Seat Select POP UP End-->
     <!--Body Part End-->
     <!--Footer Start-->
     <footer class="border-top footerbackground">
         <div class="row">
-            <div class="col-12 col-md ">                
+            <div class="col-12 col-md ">
                 <spa>
                     <p>Make Your Journy Easy</p>
                 </spa>
