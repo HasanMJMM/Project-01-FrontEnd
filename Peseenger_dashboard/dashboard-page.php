@@ -29,6 +29,7 @@
                 </div>                
                 <div>
                     <span>Welcome, Admin!</span>
+                    <span>Welcome, [Passenger]!</span>
                 </div>
             </div>
         </div>        
@@ -94,7 +95,11 @@
                             <img src="images/journey pic/TICKET cANCELLATION.jpg"alt="Image" class="card-image" style="width: 130px;">
                             <h5 class="card-title">Ticket Cancellations</h5>
                             <p class="card-text">Manage ticket cancellations here.</p>
+
                             <a href="TicketCancel.php" class="btn btn-primary">Go to Ticket Cancellations</a>
+
+                        <a href="#" class="btn btn-primary">Go to Ticket Cancellations</a>
+
                         </div>
                     </div>
                 </div>
@@ -105,6 +110,8 @@
                             <h5 class="card-title">Package Bookings</h5>
                             <p class="card-text">Manage package bookings here.</p>
                             <a href="../PackageBooking.php" class="btn btn-primary">Go to Package Bookings</a>
+                            <a href="#" class="btn btn-primary">Go to Package Bookings</a>
+
                         </div>
                     </div>
                 </div>
@@ -114,7 +121,10 @@
                             <img src="images/journey pic/Package cancellation.jpg"alt="Image" class="card-image" style="width: 130px;">
                             <h5 class="card-title">Package Cancellations</h5>
                             <p class="card-text">Manage package cancellations here.</p>
-                            <a href="TicketCancel.php" class="btn btn-primary">Go to Package Cancellations</a>
+
+          
+                            <a href="#" class="btn btn-primary">Go to Package Cancellations</a>
+
                         </div>
                     </div>
                 </div>
