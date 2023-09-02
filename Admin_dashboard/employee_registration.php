@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Employee Registration</title>
+        <title>Conductor Registration</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@ and open the template in the editor.
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="employee.css">
 
-        <title>Add Employee</title>
+        <title>Add Conductor</title>
 
 
 
@@ -35,14 +35,14 @@ and open the template in the editor.
         ?>
         <div class="container-fluid bg-dark text-light py-3">
         <div class= "d-flex justify-content-center">
-            <h1 class="display-6"> Employee Registration</h1>
+            <h1 class="display-6"> Conductor Registration</h1>
         </div>
     </div><br><br>
     <section class="container my-2 bgdark w-50 text">
         <form class="row g-3p-3">
             
             <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">Employee ID</label>
+                <label for="validationCustom01" class="form-label">Conductor ID</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
                 
                 
@@ -97,7 +97,7 @@ and open the template in the editor.
 
                 
                   <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Add Employee</button>
+                    <button type="submit" class="btn btn-primary">Add Conductor</button>
                   </div>
            
         
