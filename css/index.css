@@ -1,29 +1,22 @@
 body {
-  background: whitesmoke;
+  background-color: white;
 }
+
 .buyticket-button {
-  margin-left: 320px;
-}
-.homeTab {
-  margin-left: 400px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 }
 .navBar {
-  background: linear-gradient(
-    90deg,
-    rgba(72, 186, 183, 1) 0%,
-    rgba(23, 227, 228, 1) 16%,
-    rgba(23, 168, 228, 1) 79%,
-    rgba(3, 26, 224, 1) 100%
-  );
+  background: url(../Images/down.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 3rem;
 }
 .footerbackground {
-  background: linear-gradient(
-    90deg,
-    rgba(72, 186, 183, 1) 0%,
-    rgba(23, 227, 228, 1) 16%,
-    rgba(23, 168, 228, 1) 79%,
-    rgba(3, 26, 224, 1) 100%
-  );
+  background: linear-gradient(-45deg, #0d6efd, #0d6efd);
   max-width: 100%;
   align-items: center;
   justify-content: center;
@@ -132,85 +125,41 @@ body {
   background-color: rgb(56, 247, 82);
 }
 .routeFilter {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 5%;
-  padding-top: 5%;
-  margin-top: 46px;
-  height: 450px;
-  background-image: url(https://c8.alamy.com/comp/2CX2XF7/vector-bus-station-intercity-buses-on-the-background-of-the-cityscape-in-the-distance-modern-flat-vector-illustration-for-banner-poster-flyer-or-l-2CX2XF7.jpg);
+  margin-top: 8.5rem;
+  padding: 10rem;
+  background-image: url("../Images/FinalBG3.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
 /* navbar css */
-
-.homeIcon {
-  border-width: 0.2px;
-  height: 50px;
-  width: 120px;
-  border-radius: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
+.TabsInNavbar {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: color 0.9s;
+}
+.TabsInNavbar::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 0.4rem;
+  background-color: white;
+  transition: width 0.9s;
+}
+.TabsInNavbar:hover {
+  color: white;
+}
+.TabsInNavbar:hover::before {
+  width: 75%;
 }
 
-.homeIcon:hover {
-  border-width: 0.2px;
-  height: 50px;
-  width: 120px;
-  border-radius: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  background-color: #108696;
-  transition: 0.5s;
-  transform: translate(4px);
-}
-
-.aboutUSIcon {
-  border-width: 0.2px;
-  height: 50px;
-  width: 120px;
-  border-radius: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
-
-.aboutUSIcon:hover {
-  border-width: 0.2px;
-  height: 50px;
-  width: 120px;
-  border-radius: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  background-color: #108696;
-  transition: 0.5s;
-  transform: translateY(2px);
-}
-
-.contactUsIcon {
-  border-width: 0.2px;
-  height: 50px;
-  width: 120px;
-  border-radius: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
-
-.contactUsIcon:hover {
-  border-width: 0.2px;
-  height: 50px;
-  width: 120px;
-  border-radius: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  background-color: #108696;
-  transition: 0.5s;
-  transform: translate(-4px);
-}
 .ticketPrice {
   color: rgb(49, 241, 49);
 }
@@ -376,4 +325,44 @@ body {
   align-items: center;
   padding: 0px;
   background-color: rgb(248, 10, 10);
+}
+.coustomText {
+  color: white;
+}
+.coustomIcon {
+  color: white;
+}
+.navbarTabsMenue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  flex-grow: 1;
+  margin-left: 0rem;
+}
+.BannerTextBody { 
+  position: relative; 
+  margin-top: 14.25rem;
+  color: white;
+  font: popins;
+}
+.BannerTitle {
+  margin-bottom: 1rem;
+  color: white;
+}
+.Logo-TravelEase {
+  margin-top: 2rem;
+}
+.LogoImage {
+  margin-top: -2rem;
+  margin margin-left: 2.25rem;
+  height: 10rem;
+  width: 10rem;
+}
+.bannerbacgground{
+  position: absolute;
+  z-index: 0;   
+  height: 45rem;
+  width: 33rem;
+  margin-top: -8rem;
 }
