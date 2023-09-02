@@ -93,21 +93,19 @@ $databaseObj = new Database($host, $database, $username, $password);
                 <p>Travel with EaseTravales</p>
             </div>
             <div class="col-md-10 mx-auto col-lg-5">
-                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="FindTicketCommanUser.php" method="POST">
                     <div class="row">
                         <div class="col">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Pickup Point">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Pickup Point" name="departure_location" id="departure_location">
                                 <option selected>Pickup Point</option>
-                                <option value="1">Badulla</option>
-                                <option value="2">Colombo</option>
-                                <option value="3">Kandy</option>
+                                <option value="badulla">Badulla</option>
+                                <option value="colombo">Colombo</option>
                             </select>
                         </div>
                         <div class="col">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="" id="">
                                 <option selected>Dropping Point</option>
                                 <option value="1">Badulla</option>
-                                <option value="2">Kandy</option>
                                 <option value="3">Colombo</option>
                             </select>
                         </div>
@@ -122,7 +120,63 @@ $databaseObj = new Database($host, $database, $username, $password);
                         </div>
                     </div>
                     <hr class="my-4">
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Find Tickets</button>
+                    <!-- Back End PHP for form Start -->
+
+                    <!-- Back End PHP for form End -->
+                    <!-- Choose Ticket poup start -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Find Tickets
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog FindTicketsDivPopUpWindow">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <!--Route part start-->
+                                    <div class="container my-0">
+                                        <div class="p-5 text-center bg-body-secondary rounded-3">
+                                            <h1 class="text-body-emphasis">Badulla - Colombo</h1>
+
+                                            <div class="text-center">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <table>
+                                                            <tr>
+                                                                <th>11.00 PM</th>
+                                                                <th><ion-icon name="arrow-forward"></ion-icon></th>
+                                                                <th>04.00 AM</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Badulla</td>
+                                                                <td><ion-icon name="arrow-forward"></ion-icon></td>
+                                                                <td>Colombo</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-6 text-center">
+                                                        <h3>Super Luxuary</h3>
+                                                        <h5>UV NT-3455</h5>
+                                                    </div>
+                                                    <div class="col-3 text-center">
+                                                        <h3 class="ticketPrice">RS. 2000</h3>
+                                                        <small>Available for all Days</small>
+                                                        <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Choose Seat</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Route part End-->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Choose Ticket Poup End -->
                     <hr class="my-4 mt-2">
                     <div class="row text-center">
                         <div class="col-3"></div>
@@ -158,14 +212,14 @@ $databaseObj = new Database($host, $database, $username, $password);
         </div>
         <div class="row">
             <!--Easy option Tabs Start-->
-            <div class="col-3">
+            <div class="col-3" id="FindTicketsSEction">
                 <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
                     <div class="position-sticky">
                         <div class="list-group list-group-flush mx-3 mt-4">
 
                             <!--Easy Option Routes Start-->
                             <!--Route No 1 Badulla to Colombo (BTC)-->
-                            <a class="list-group-item list-group-item-action active sidebarnew1" id="list-dashBoard-list" data-bs-toggle="list" href="#list-dashBoard" role="tab" aria-controls="list-dashBoard" aria-selected="false" tabindex="-1"><span>Badulla to Colombo</span></a>
+                            <a class="list-group-item list-group-item-action active sidebarnew1" id="list-dashBoard-list" data-bs-toggle="list" href="#list-dashBoard" role="tab" aria-controls="list-dashBoard" aria-selected="True" tabindex="-1"><span>Badulla to Colombo</span></a>
                             <!--Route No 2 Passara to Colombo(PTC)-->
                             <a class="list-group-item list-group-item-action sidebarnew1" id="list-proposal-list" data-bs-toggle="list" href="#list-proposal" role="tab" aria-controls="list-proposal" aria-selected="false"><span>Passara to Colombo</span></a>
                             <!--Route No 3 Ella to Colombo (ETC)-->
@@ -903,15 +957,12 @@ $databaseObj = new Database($host, $database, $username, $password);
     <footer class="border-top footerbackground">
         <div class="row">
             <div class="col-12 col-md ">
-<<<<<<< HEAD
-=======
                 <span>
                     <img class="mb-2" src="images/logo2.jpg" alt="" width="24" height="19">
                 </span>
->>>>>>> 7659520ae6c2c3a9640c08419493eb2f332facdf
-                <spa>
+                <span>
                     <p>Make Your Journy Easy</p>
-                </spa>
+                </span>
                 <small class="d-block mb-3 text-body-secondary">&copy; 2017–2023</small>
                 <div class="row ">
                     <div class="container firstCol">
