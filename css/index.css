@@ -366,3 +366,6 @@ body {
   width: 33rem;
   margin-top: -8rem;
 }
+.FindTicketsDivPopUpWindow{
+  max-width: 60%;
+}
