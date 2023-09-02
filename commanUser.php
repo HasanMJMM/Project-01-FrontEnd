@@ -903,6 +903,12 @@ $databaseObj = new Database($host, $database, $username, $password);
     <footer class="border-top footerbackground">
         <div class="row">
             <div class="col-12 col-md ">
+<<<<<<< HEAD
+=======
+                <span>
+                    <img class="mb-2" src="images/logo2.jpg" alt="" width="24" height="19">
+                </span>
+>>>>>>> 7659520ae6c2c3a9640c08419493eb2f332facdf
                 <spa>
                     <p>Make Your Journy Easy</p>
                 </spa>

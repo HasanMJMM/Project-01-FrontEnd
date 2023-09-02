@@ -104,12 +104,7 @@
                                             <input type="text" class="form-control" id="name" placeholder="Full name">
                                         </div>
                                     </div>
-                                    <div class="mb-4 row">
-                                        <label for="formFile" class="col-sm-2 col-form-label">Input image</label>
-                                        <div class="col-sm-10">
-                                            <input class="form-control" class="custom-file-input" type="file" id="formFile">
-                                        </div>
-                                    </div>
+
                                     <div class="mb-4 row">
                                         <label for="name" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-10">
