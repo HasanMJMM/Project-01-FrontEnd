@@ -1,5 +1,5 @@
 body {
-  background-color: white;  
+  background-color: white;
 }
 
 .buyticket-button {
@@ -13,7 +13,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 200%;
+  height: 3rem;
 }
 .footerbackground {
   background: linear-gradient(-45deg, #0d6efd, #0d6efd);
@@ -340,8 +340,9 @@ body {
   flex-grow: 1;
   margin-left: 0rem;
 }
-.BannerTextBody {
-  margin-top: 9.25rem;
+.BannerTextBody { 
+  position: relative; 
+  margin-top: 14.25rem;
   color: white;
   font: popins;
 }
@@ -351,4 +352,17 @@ body {
 }
 .Logo-TravelEase {
   margin-top: 2rem;
+}
+.LogoImage {
+  margin-top: -2rem;
+  margin margin-left: 2.25rem;
+  height: 10rem;
+  width: 10rem;
+}
+.bannerbacgground{
+  position: absolute;
+  z-index: 0;   
+  height: 45rem;
+  width: 33rem;
+  margin-top: -8rem;
 }
