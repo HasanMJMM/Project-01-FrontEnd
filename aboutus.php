@@ -28,7 +28,7 @@
     <!--Navbar Start-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary navBar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Ease Travels</a>
+          <a class="navbar-brand" href="#">JourneyEase</a>
           <button
             class="navbar-toggler"
             type="button"

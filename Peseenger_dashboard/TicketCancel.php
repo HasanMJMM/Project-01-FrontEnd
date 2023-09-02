@@ -39,7 +39,7 @@ user-cst/20/027
             <div class="d-flex justify-content-center">
                 <h1 class="display-6"> Ticket Cancellation</h1>
             </div>
-        </div>
+        </div><br><br><br><br>
         <section class="container my-2 bgdark w-50 text">
             <form class="row g-3p-3">
 

@@ -886,7 +886,7 @@
         <div class="row">
             <div class="col-12 col-md ">
                 <span>
-                    <img class="mb-2" src="../assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
+                    <img class="mb-2" src="images/logo2.jpg" alt="" width="24" height="19">
                 </span>
                 <spa>
                     <p>Make Your Journy Easy</p>
