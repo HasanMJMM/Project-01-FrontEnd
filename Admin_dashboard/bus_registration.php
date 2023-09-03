@@ -1,3 +1,49 @@
+<?php
+        require_once('../classes/dbConnectorC.php');
+
+        use classes\dbconnectorC;
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if (isset($_POST['submit'])) {
+                if (empty($_POST['Number']) || empty($_POST['color'])|| empty($_POST['Model'])|| empty($_POST['seats'])|| empty($_POST['ID'])) {
+                    echo'<div class="alert alert-danger" role="alert"> Please fill the Form!</div>';
+                } else {
+                    $Number = $_POST['Number'];
+                    $color = $_POST['color'];
+                    $Model = $_POST['Model'];
+                    $seats = $_POST['seats'];
+                    $ID = $_POST['ID'];
+
+                    $dbcon = new dbconnectorC();
+                    $con = $dbcon->getConnection();
+                    
+                
+
+                   
+                    $query1 = "INSERT INTO bus(Type_of_Bus,Bus_Registration_Number,Colour,No_Of_Seats,Bus_ID)VALUES(?,?,?,?,?)";
+
+                    $pstmt1 = $con->prepare($query1);
+                    $pstmt1->bindValue(1, $Model);
+
+                    $pstmt1->bindValue(2, $Number);
+                    $pstmt1->bindValue(3, $color);
+                    $pstmt1->bindValue(4, $seats);
+                    $pstmt1->bindValue(5, $ID);
+                    $pstmt1->execute();
+
+
+                    if ($pstmt1) {                        
+                        echo'<div class="alert alert-success" role="alert">Successfully Added.</div>';
+
+                    } else {                      
+                        echo'<div class="alert alert-danger" role="alert"> Please fill the Form!</div>';
+                    }
+                }
+            }
+        }
+        ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,6 +52,7 @@ and open the template in the editor.
 
 user-cst/20/027
 -->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -30,79 +77,56 @@ user-cst/20/027
               integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
               crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-       
+    <body>        
         <div class="container-fluid bg-dark text-light py-3">
             <div class="d-flex justify-content-center">
                 <h1 class="display-6"> Bus Registration</h1>
             </div>
         </div>
         <section class="container my-2 bgdark w-50 text">
-            <form class="row g-3p-3">
+            <form class="row g-3p-3" action="" method="POST">
 
-                <div class="col-md-4">
+
+                
+                <div class="col-md-6">
                     <label for="validationCustom01" class="form-label">Bus ID</label>
-                    <input type="text" class="form-control" id="validationCustom01" required>
-                </div>
+                    <input type="text" class="form-control" id="validationCustom01" name="ID">
 
-
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">Bus Category</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>AC</option>
-                        <option> Non AC</option>
-
-                    </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="validationCustom01" class="form-label">Bus Number Plate</label>
-                    <input type="text" class="form-control" id="validationCustom01" required>
+                    <label for="validationCustom01" class="form-label">Bus Registration Number</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="Number">
 
                 </div>
                 <div class="col-md-6">
                     <label for="validationCustom02" class="form-label">Bus Colour</label>
-                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <input type="text" class="form-control" id="validationCustom02" name="color">
 
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Bus Model</label>
-                    <input type="text" class="form-control" id="inputmodel">
+                    <input type="text" class="form-control" id="inputmodel" name="Model">
                 </div>
                 <div class="col-md-7">
                     <label for="inputPassword4" class="form-label">Number of seats</label>
-                    <input type="text" id="inputseats" class="form-control" />
+                    <input type="text" id="inputseats" class="form-control" name="seats"/>
                 </div>
 
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Route ID</label>
-                    <input type="text" class="form-control" id="inputID">
-                </div>
-
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Driver ID</label>
-                    <input type="text" class="form-control" id="inputID">
-                </div>
-
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Conductor ID</label>
-                    <input type="text" class="form-control" id="inputID" >
-                </div>
 
 
 
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Add Bus</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Add Bus</button>
+                    
                 </div>
 
 
-
+                
 
         </section>
+        
 
     </body>
 </html>

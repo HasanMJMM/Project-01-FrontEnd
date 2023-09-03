@@ -1,3 +1,54 @@
+<?php
+        require_once('../classes/dbConnectorC.php');
+
+        use classes\dbconnectorC;
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if (isset($_POST['submit'])) {
+                if (empty($_POST['Name']) || empty($_POST['email'])|| empty($_POST['no'])|| empty($_POST['address'])|| empty($_POST['ID'])|| empty($_POST['BID'])) {
+                    echo'<div class="alert alert-danger" role="alert"> Please fill the Form!</div>';
+                } else {
+                    $Name = $_POST['Name'];
+                    $email = $_POST['email'];
+                    $PhoneNo = $_POST['no'];
+                    $address = $_POST['address'];
+                    $ID = $_POST['ID'];
+                    $BID = $_POST['BID'];
+
+                    $dbcon = new dbconnectorC();
+                    $con = $dbcon->getConnection();
+                    
+                
+
+                   
+                    $query1 = "INSERT INTO conductor(FName, Email, Contact_No, Conductor_ID, Address,Bus_ID) VALUES (?, ?, ?, ?, ?,?)";
+
+
+                    $pstmt1 = $con->prepare($query1);
+                    $pstmt1->bindValue(1, $Name);
+
+                    $pstmt1->bindValue(2, $email);
+                    $pstmt1->bindValue(3,  $PhoneNo );
+                    $pstmt1->bindValue(4, $ID);
+                    $pstmt1->bindValue(5, $address);
+                    $pstmt1->bindValue(6, $BID);
+                    $pstmt1->execute();
+
+
+                    if ($pstmt1) {                        
+                        echo'<div class="alert alert-success" role="alert">Successfully Added.</div>';
+
+                    } else {                      
+                        echo'<div class="alert alert-danger" role="alert"> Error!</div>';
+                    }
+                }
+            }
+        }
+        ?>
+
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -7,7 +58,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Employee Registration</title>
+        <title>Conductor Registration</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +68,7 @@ and open the template in the editor.
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="employee.css">
 
-        <title>Add Employee</title>
+        <title>Add Conductor</title>
 
 
 
@@ -34,75 +85,41 @@ and open the template in the editor.
         // put your code here
         ?>
         <div class="container-fluid bg-dark text-light py-3">
-        <div class= "d-flex justify-content-center">
-            <h1 class="display-6"> Employee Registration</h1>
+    <div class= "d-flex justify-content-center">
+        <h1 class="display-6"> Conductor Registration</h1>
+    </div>
+</div><br><br>
+<section class="container my-2 bgdark w-50 text">
+    <form class="row g-3p-3" action="" method="POST">
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Conductor ID</label>
+            <input type="text" class="form-control" id="validationCustom01" name="BID" required>
         </div>
-    </div><br><br>
-    <section class="container my-2 bgdark w-50 text">
-        <form class="row g-3p-3">
-            
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">Employee ID</label>
-                <input type="text" class="form-control" id="validationCustom01" required>
-                
-                
-        
-            </div>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Bus ID</label>
+            <input type="text" class="form-control" id="validationCustom01" name="ID" required>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom01" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="validationCustom01" name="Name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Contact No</label>
+            <input type="text" id="phone" class="form-control" data-mdb-input-mask="+48 999-999-999" name="no"/>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address"><br>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" name="submit">Add Conductor</button>
+        </div>
+    </form>
+</section>
 
-
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">Category</label>
-                <select id="inputState" class="form-select">
-                    <option selected>Driver</option>
-                    <option>Conductor</option>
-
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label for="validationCustom01" class="form-label">First name</label>
-                <input type="text" class="form-control" id="validationCustom01" required>
-              
-            </div>
-            <div class="col-md-6">
-                <label for="validationCustom02" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
-                
-            </div>
-
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Contact No</label>
-                <input type="text" id="phone" class="form-control" data-mdb-input-mask="+48 999-999-999" />
-            </div>
-
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-
-
-
-
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text mt-3" id="basic-addon1">Appointe Date</span>
-                        <input type="date" class="form-control mt-3" placeholder="Appoint Date"
-                            aria-label="Departure Date" aria-describedby="basic-addon1">
-
-                    </div>
-                </div>
-
-                
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Add Employee</button>
-                  </div>
-           
-        
-                
-           
-    </section>
     </body>
 </html>
