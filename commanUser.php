@@ -12,6 +12,33 @@
     <script src="./js/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Add your CSS styles here */
+        .seat {
+            position: relative;
+            border: 0.1px;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        .selected-child {
+            background-color: yellow;
+        }
+
+        .selected-woman {
+            background-color: pink;
+        }
+
+        .selected-man {
+            background-color: green;
+        }
+    </style>
 </head>
 
 <body>
@@ -180,14 +207,7 @@
                             <!--Route No 1 Badulla to Colombo (BTC)-->
                             <a class="list-group-item list-group-item-action active sidebarnew1" id="list-dashBoard-list" data-bs-toggle="list" href="#list-dashBoard" role="tab" aria-controls="list-dashBoard" aria-selected="True" tabindex="-1"><span>Badulla to Colombo</span></a>
                             <!--Route No 2 Passara to Colombo(PTC)-->
-                            <a class="list-group-item list-group-item-action sidebarnew1" id="list-proposal-list" data-bs-toggle="list" href="#list-proposal" role="tab" aria-controls="list-proposal" aria-selected="false"><span>Passara to Colombo</span></a>
-                            <!--Route No 3 Ella to Colombo (ETC)-->
-                            <a class="list-group-item list-group-item-action sidebarnew1" id="list-employee-list" data-bs-toggle="list" href="#list-employee" role="tab" aria-controls="list-employee" aria-selected="false"><span>Ella to Colombo</span></a>
-                            <!--Route No 4 Bandarawela to Colombo (BwTC)-->
-                            <a class="list-group-item list-group-item-action sidebarnew1" id="list-reports-list" data-bs-toggle="list" href="#list-reports" role="tab" aria-controls="list-reports" aria-selected="false"><span>Bandarawela to Colombo</span></a>
-                            <!--Route No 5 Badulla to Kandy to Colombo (BTKTC)-->
-                            <a class="list-group-item list-group-item-action sidebarnew1" id="list-communication-list" data-bs-toggle="list" href="#list-communication" role="tab" aria-controls="list-communication" aria-selected="false"><span>Badulla-Kandy to Colombo</span></a>
-                            <!--Easy Option Routes End-->
+                            <a class="list-group-item list-group-item-action sidebarnew1" id="list-proposal-list" data-bs-toggle="list" href="#list-proposal" role="tab" aria-controls="list-proposal" aria-selected="false"><span>Colombo to Badulla</span></a>
                         </div>
                     </div>
                 </nav>
@@ -232,147 +252,51 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Badulla - Colombo </h1>
-                                    <p class="lead">
-                                        Route no2
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no2 End-->
-                            <!--Route no3 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Badulla - Colombo</h1>
-                                    <p class="lead">
-                                        Route no3
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no3 End-->
-                            <!--Route no4 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Badulla - Colombo</h1>
-                                    <p class="lead">
-                                        Route no4
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no4 End-->
+                            <!-- Route No 1 End -->
+
                         </div>
 
                         <!--BTC Content End-->
-                        <!--PTC Content End-->
+                        <!--CTB Content End-->
                         <div class="tab-pane fade" id="list-proposal" role="tabpanel" aria-labelledby="list-proposal-list" style="height:100vh;">
                             <!--Route no1 start-->
                             <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Passara - Colombo</h1>
-                                    <p class="lead">
-                                        Route no1
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Passara - Colombo</h1>
-                                    <p class="lead">
-                                        Route no2
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
+                                <div class="p-5 text-center bg-body-secondary rounded-3">
+                                    <h1 class="text-body-emphasis">Badulla - Colombo</h1>
 
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <table>
+                                                    <tr>
+                                                        <th>11.00 PM</th>
+                                                        <th><ion-icon name="arrow-forward"></ion-icon></th>
+                                                        <th>04.00 AM</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Badulla</td>
+                                                        <td><ion-icon name="arrow-forward"></ion-icon></td>
+                                                        <td>Colombo</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                <h3>Super Luxuary</h3>
+                                                <h5>UV NT-3455</h5>
+                                            </div>
+                                            <div class="col-3 text-center">
+                                                <h3 class="ticketPrice">RS. 2000</h3>
+                                                <small>Available for all Days</small>
+                                                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Choose Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Route No 1 End -->
                         </div>
-                        <!--PTC Content End-->
-                        <!--ETC Content End-->
-                        <div class="tab-pane fade" id="list-employee" role="tabpanel" aria-labelledby="list-employee-list" style="height:100vh;">
-                            <!--Route no1 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Ella - Colombo</h1>
-                                    <p class="lead">
-                                        Route no1
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Ella - Colombo</h1>
-                                    <p class="lead">
-                                        Route no2
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                        </div>
-                        <!--ETC Content End-->
-                        <!--BwTC Content Start-->
-                        <div class="tab-pane fade" id="list-reports" role="tabpanel" aria-labelledby="list-reports-list" style="height:100vh;">
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Bandarawela - Colombo</h1>
-                                    <p class="lead">
-                                        Route no1
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Bandarawela - Colombo</h1>
-                                    <p class="lead">
-                                        Route no2
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                        </div>
-                        <!--BwTC Content End-->
-                        <div class="tab-pane fade" id="list-communication" role="tabpanel" aria-labelledby="list-communication-list" style="height:100vh;">
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Bandarawela- kandy - Colombo</h1>
-                                    <p class="lead">
-                                        Route no1
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                            <!--Route no2 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                                    <h1 class="text-body-emphasis">Bandarawela- kandy - Colombo</h1>
-                                    <p class="lead">
-                                        Route no2
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="b-example-divider"><br></div>
-                            <!--Route no1 End-->
-                        </div>
+                        <!--cTB Content End-->
+
                         <!--new menu item end-->
                     </div>
                 </div>
@@ -420,11 +344,10 @@
                     <div class="row">
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Seat For</label>
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option selected>Choose Passanger Category</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                                <option value="3">Child</option>
+                            <select id="passengerCategory">
+                                <option value="child">Child</option>
+                                <option value="woman">Woman</option>
+                                <option value="man">Man</option>
                             </select>
                         </div>
                     </div>
@@ -433,480 +356,650 @@
                         <div class="row text-center">
                             <h3>Front</h3>
                         </div>
-                        <div class="row text-center">
-                            <div class="col-1"></div>
-                            <div class="col-2">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <button class="seatWithNumberButton">
-                                                <div class="text-center seatWithNumber">
-                                                    <span>
-                                                        <small class="seatNumber">01</small>
-                                                        <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
-                                                    </span>
-                                                </div>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button class="seatWithNumberButton">
-                                                <div class="text-center seatWithNumber">
-                                                    <span>
-                                                        <small class="seatNumber">02</small>
-                                                        <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
-                                                    </span>
-                                                </div>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                        <div id="seatContainer">
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="1">
                                                 <span>
-                                                    <small class="seatNumber">03</small>
+                                                    <small class="seatNumber">1</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="2">
                                                 <span>
-                                                    <small class="seatNumber">04</small>
+                                                    <small class="seatNumber">2</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="3">
                                                 <span>
-                                                    <small class="seatNumber">05</small>
+                                                    <small class="seatNumber">3</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="4">
                                                 <span>
-                                                    <small class="seatNumber">06</small>
+                                                    <small class="seatNumber">4</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="5">
                                                 <span>
-                                                    <small class="seatNumber">07</small>
+                                                    <small class="seatNumber">5</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="6">
                                                 <span>
-                                                    <small class="seatNumber">08</small>
+                                                    <small class="seatNumber">6</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="7">
                                                 <span>
-                                                    <small class="seatNumber">09</small>
+                                                    <small class="seatNumber">7</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="8">
+                                                <span>
+                                                    <small class="seatNumber">8</small>
+                                                    <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="9">
+                                                <span>
+                                                    <small class="seatNumber">9</small>
+                                                    <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="10">
                                                 <span>
                                                     <small class="seatNumber">10</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="11">
                                                 <span>
                                                     <small class="seatNumber">11</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="12">
                                                 <span>
                                                     <small class="seatNumber">12</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="13">
                                                 <span>
                                                     <small class="seatNumber">13</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="14">
                                                 <span>
                                                     <small class="seatNumber">14</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="15">
                                                 <span>
                                                     <small class="seatNumber">15</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="16">
                                                 <span>
                                                     <small class="seatNumber">16</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <!--Seat with number Aligned Start-->
-                                <!-- <div class="text-center seatWithNumber">
-                            <span>
-                            <small class="seatNumber">01</small>
-                            <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
-                            </span>
-                        </div> -->
-                                <!--Seat with number Aligned Start-->
-                            </div>
-                            <div class="col-3"></div>
-                            <div class="col-3">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="17">
                                                 <span>
                                                     <small class="seatNumber">17</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="18">
                                                 <span>
                                                     <small class="seatNumber">18</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="19">
                                                 <span>
                                                     <small class="seatNumber">19</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="20">
                                                 <span>
                                                     <small class="seatNumber">20</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="21">
                                                 <span>
                                                     <small class="seatNumber">21</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="22">
                                                 <span>
                                                     <small class="seatNumber">22</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="23">
                                                 <span>
                                                     <small class="seatNumber">23</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="24">
                                                 <span>
                                                     <small class="seatNumber">24</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="25">
                                                 <span>
                                                     <small class="seatNumber">25</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="26">
                                                 <span>
                                                     <small class="seatNumber">26</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="27">
                                                 <span>
                                                     <small class="seatNumber">27</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="28">
                                                 <span>
                                                     <small class="seatNumber">28</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="29">
                                                 <span>
                                                     <small class="seatNumber">29</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="30">
                                                 <span>
                                                     <small class="seatNumber">30</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="31">
                                                 <span>
                                                     <small class="seatNumber">31</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="32">
                                                 <span>
                                                     <small class="seatNumber">32</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="33">
                                                 <span>
                                                     <small class="seatNumber">33</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="34">
                                                 <span>
                                                     <small class="seatNumber">34</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="35">
                                                 <span>
-                                                    <small class="seatNumber">35</small>
+                                                    <small class="seatNumber">5</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="36">
                                                 <span>
                                                     <small class="seatNumber">36</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="37">
                                                 <span>
                                                     <small class="seatNumber">37</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="38">
                                                 <span>
                                                     <small class="seatNumber">38</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="39">
                                                 <span>
                                                     <small class="seatNumber">39</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumber">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="40">
                                                 <span>
                                                     <small class="seatNumber">40</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
                             </div>
-                            <div class="col-3"></div>
-                        </div>
-                        <div class="row text-center">
-                            <h3>Reer</h3>
-                        </div>
-                        <div class="row text-center ">
-                            <div class="text-center displaySeatCatogery">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center seatWithNumberReserved">
+                            <!--Select select Row End -->
+                            <!--select seat row start-->
+                            <div class="row mt-1">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="seat seatsWithNumberImages" data-seat-number="41">
                                                 <span>
-                                                    <small class="seatNumber"></small>
+                                                    <small class="seatNumber">41</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumberSelected">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="seat" data-seat-number="42">
                                                 <span>
-                                                    <small class="seatNumber"></small>
+                                                    <small class="seatNumber">2</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumberSelectedByMale">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="43">
                                                 <span>
-                                                    <small class="seatNumber"></small>
+                                                    <small class="seatNumber">43</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumberSelectedByFemale">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="44">
                                                 <span>
-                                                    <small class="seatNumber"></small>
+                                                    <small class="seatNumber">44</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center seatWithNumberSelectedByChild">
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="seat" data-seat-number="45">
                                                 <span>
-                                                    <small class="seatNumber"></small>
+                                                    <small class="seatNumber">45</small>
                                                     <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
                                                 </span>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--Select select Row End -->
 
-                                    </tr>
-                                    <tr>
-                                        <td><small>Reserved</small></td>
-                                        <td><small>Selected</small></td>
-                                        <td><small>Male</small></td>
-                                        <td><small>Female</small></td>
-                                        <td><small>Child</small></td>
-                                    </tr>
-                                </table>
-                            </div>
                         </div>
-                        <div class="row">
-                            <div class="text-center">
-                                <button class="btn btn-outline-warning">Add Seat</button>
-                            </div>
+                        <div>
+                            <p>Total Price: <span id="totalPrice">0</span></p>
+                        </div>
+                        <div>
+                            <p>Selected Seats:</p>
+                            <label id="selectedSeatsLabel"></label>
+                        </div>
+
+                        <script>
+                            // JavaScript code here
+                            const seatButtons = document.querySelectorAll('.seat');
+                            const passengerCategorySelect = document.getElementById('passengerCategory');
+                            const totalPriceDisplay = document.getElementById('totalPrice');
+                            const selectedSeatsLabel = document.getElementById('selectedSeatsLabel');
+
+                            let selectedSeats = {};
+
+                            seatButtons.forEach((seatButton) => {
+                                seatButton.addEventListener('click', () => {
+                                    const seatNumber = seatButton.getAttribute('data-seat-number');
+                                    const passengerCategory = passengerCategorySelect.value;
+
+                                    if (selectedSeats[seatNumber]) {
+                                        // Deselect the seat
+                                        delete selectedSeats[seatNumber];
+                                        seatButton.classList.remove(`selected-${passengerCategory}`);
+                                    } else {
+                                        // Select the seat
+                                        selectedSeats[seatNumber] = passengerCategory;
+                                        seatButton.classList.add(`selected-${passengerCategory}`);
+                                    }
+
+                                    // Update the total price (you can set your own pricing logic)
+                                    const totalPrice = Object.keys(selectedSeats).length * 2000; // Assuming each seat costs $10
+                                    totalPriceDisplay.textContent = totalPrice;
+
+                                    // Generate reference numbers for selected seats
+                                    const referenceNumbers = Object.entries(selectedSeats).map(([seat, ageGroup]) => {
+                                        return `SH01-${seat}-${ageGroup}`;
+                                    });
+
+                                    // Update the selected seats label
+                                    selectedSeatsLabel.textContent = referenceNumbers.join(', ');
+                                });
+                            });
+                        </script>
+
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="row text-center">
+                        <h3>Reer</h3>
+                    </div>
+                    <div class="row text-center ">
+                        <div class="text-center displaySeatCatogery">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="text-center seatWithNumberReserved">
+                                            <span>
+                                                <small class="seatNumber"></small>
+                                                <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center seatWithNumberSelected">
+                                            <span>
+                                                <small class="seatNumber"></small>
+                                                <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center seatWithNumberSelectedByMale">
+                                            <span>
+                                                <small class="seatNumber"></small>
+                                                <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center seatWithNumberSelectedByFemale">
+                                            <span>
+                                                <small class="seatNumber"></small>
+                                                <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center seatWithNumberSelectedByChild">
+                                            <span>
+                                                <small class="seatNumber"></small>
+                                                <img src="https://thenounproject.com/api/private/icons/661611/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" class="rounded seatImage" alt="...">
+                                            </span>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td><small>Reserved</small></td>
+                                    <td><small>Selected</small></td>
+                                    <td><small>Male</small></td>
+                                    <td><small>Female</small></td>
+                                    <td><small>Child</small></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                    <hr class="mt-1">
-                    <div class="displayLables">
-                        <div class="row">
-                            <div class="col">
-                                <label>Selected Seats :</label>
-                            </div>
-                            <div class="col">
-                                <lable>Total : </lable>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkout mt-3">
-                        <a href="checkout.php">
-                            <button class="btn btn-outline-primary"> Proceed to Checkout</button>
-                        </a>
-                    </div>
-                </div>
-                <hr>
-                <div class="footerForPopUp">
                     <div class="row">
-                        <div class="col-8 footerforSelectSeat">
-                            <button type="button" class="btn btn-outline-danger">Clear Changes</button>
-                        </div>
-
-                        <div class="col-4 footerforSelectSeat">
-                            <button type="button" class="btn btn-outline-success">Sign In</button>
+                        <div class="text-center">
+                            <button class="btn btn-outline-warning">Add Seat</button>
                         </div>
                     </div>
                 </div>
-                <br>
+                <hr class="mt-1">
+                <div class="displayLables">
+                    <div class="row">
+                        <div class="col">
+                            <label>Selected Seats :</label>
+                        </div>
+                        <div class="col">
+                            <lable>Total : </lable>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout mt-3">
+                    <a href="checkout.php">
+                        <button class="btn btn-outline-primary"> Proceed to Checkout</button>
+                    </a>
+                </div>
             </div>
+            <hr>
+            <div class="footerForPopUp">
+                <div class="row">
+                    <div class="col-8 footerforSelectSeat">
+                        <button type="button" class="btn btn-outline-danger">Clear Changes</button>
+                    </div>
+
+                    <div class="col-4 footerforSelectSeat">
+                        <button type="button" class="btn btn-outline-success">Sign In</button>
+                    </div>
+                </div>
+            </div>
+            <br>
         </div>
+    </div>
     </div>
 
 
