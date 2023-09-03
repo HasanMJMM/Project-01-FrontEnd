@@ -117,7 +117,7 @@ function LoginUser($conn, $username, $pwd){
         $_SESSION["userid"]= $uidExist["User_ID"];
         $_SESSION["username"]= $uidExist["Username"];
         $_SESSION["name"]= $uidExist["Name"];
-        header("Location:../Peseenger_dashboard/dashboard-page.html");
+        header("Location:../Peseenger_dashboard/dashboard-page.php");
         exit();
     }
 } 

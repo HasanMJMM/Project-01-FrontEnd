@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -28,7 +31,13 @@
                         <h2>Journey Ease</h2>
                     </div>
                     <div>
-                        <span>Welcome, Pessenger!</span>
+                        <span>Welcome <?php 
+                    if(isset($_SESSION["name"])){
+                        echo $_SESSION["name"]. ' ! ';
+                    }else{
+                        echo 'user ! ';
+                    }
+                    ?></span>
                     </div>
                 </div>
             </div>
@@ -90,8 +99,12 @@
                         <?php
                         //$session_start();
                         //$_SESSION['EMAIL'] = $EMAIL;
-                        //$_SESSION['User_ID'] =6//;
-                        $User_ID=7;
+                        if(isset($_SESSION["userid"] )){
+                            $User_ID = $_SESSION["userid"];
+
+
+                        }
+                        
 
                         require_once('../classes/dbConnectorC.php');
 
@@ -101,36 +114,57 @@
                         $dbcon = new dbconnectorC();
                         $con = $dbcon->getConnection();
 
-                        $query = "SELECT *FROM user WHERE User_ID=7";
+                        $query = "SELECT * FROM user WHERE User_ID=?";
                         $pstmt = $con->prepare($query);
+                        $pstmt->bindValue(1, $User_ID);
+                         // Bind the value to the placeholder
+                         $pstmt->bindValue(2, $name);
+                         $pstmt->bindValue(3, $email);
+                         $pstmt->bindValue(4, $username);
+                         $pstmt->bindValue(5, $pwd);
+                         
+                         $pstmt->bindValue(6, $phone_no);
+                        $pstmt->execute();
+                        
                       //  $pstmt->bindValue(1, $User_ID);
 
                         $pstmt->execute();
 
 
                         $result = $pstmt->fetch(PDO::FETCH_OBJ);
-                        $username = $result->username;
-                        $name = $result->name;
-                        $email = $result->email;
-                        $phone_no = $result->phone_no;//values in input feild as $phone_no like this
+
+if (!empty($result)) {
+    $username = isset($result->username) ? $result->username : '';
+    $name = isset($result->name) ? $result->name : '';
+    $email = isset($result->email) ? $result->email : '';
+    $phone_no = isset($result->phone_no) ? $result->phone_no : '';
+} else {
+}
 
                       
 
                         if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             if (isset($_POST['update'])) {
-                                
-                                $name=$_POST['name'];
-                                $email=$_POST['username'];
-                                $username=$_POST['username'];
-                                $phone_no=$_POST['username'];
-                               $query2="UPDATE user SET username=? ,name=?,email=?,phone_no=?";
-                               $pstmt2->bindValue(1,$username);
-                               $pstmt2->bindValue(2,$name);
-                                $pstmt2->bindValue(3,$email);
-                                $pstmt2->bindValue(4,$phone_no);
+                                $name = $_POST['name'];
+                                $email = $_POST['email'];
+                                $username = $_POST['username'];
+                                $phone_no = $_POST['phone_no'];
+                        
+                                // Create a new PDO statement object for the second query
+                                $pstmt2 = $con->prepare("UPDATE user SET Username=?, Name=?, Email=?, Phone_Number=?");
+                        
+                                // Bind values to the second query
+                                $pstmt2->bindValue(1, $username);
+                                $pstmt2->bindValue(2, $name);
+                                $pstmt2->bindValue(3, $email);
+                                $pstmt2->bindValue(4, $phone_no);
+                        
+                                // Execute the second query
+                                $pstmt2->execute();
                             }
-                            
                         }
+                         echo $username;
+                         echo "jhgfd";
                         ?>
                         <div class="card custom-card">
                             <h5 class="card-title styled-heading p-3">Update User Details</h5>
@@ -141,27 +175,27 @@
                                         <div class="mb-4 row">
                                             <label for="name" class="col-sm-2 col-form-label">User name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="name" placeholder="User name"  value="<?php echo$username?>">
+                                                <input type="text" class="form-control" id="name" placeholder="User name" name="username" value="<?php echo $username ?>">
                                             </div>
                                         </div>
                                         <div class="mb-4 row">
                                             <label for="name" class="col-sm-2 col-form-label">Full name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="name" placeholder="Full name" value="<?php echo$name?>">
+                                                <input type="text" class="form-control" id="name" name="name"placeholder="Full name" value="<?php echo $name ?>">
                                             </div>
                                         </div>
 
                                         <div class="mb-4 row">
                                             <label for="name" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="name" placeholder="Email" value="<?php echo $email?>">
+                                                <input type="text" class="form-control" id="name" name="email" placeholder="Email" value="<?php echo $email ?>">
                                             </div>
                                         </div>
                                         <div class="mb-4 row">
                                             <label for="phoneNumber" class="col-sm-2 col-form-label">Phone number</label>
                                             <div class="col-sm-10">
                                                 <input type="tel" class="form-control" id="phoneNumber"
-                                                       placeholder="Enter Phone Number" value="<?php echo $phone_no ?>">
+                                                       placeholder="Enter Phone Number" name="phone_no" value="<?php echo $phone_no ?>">
                                             </div>
                                         </div>
 
