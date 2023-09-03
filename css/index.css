@@ -369,3 +369,6 @@ body {
 .FindTicketsDivPopUpWindow{
   max-width: 60%;
 }
+.FindTicketSubmitButton{
+  visibility: hidden;
+}

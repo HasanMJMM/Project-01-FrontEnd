@@ -1,15 +1,3 @@
-<?php
-require_once('classes/dbConnectorV.php');
-
-$host = "localhost";
-$database = "journey_ease";
-$username = "root";
-$password = "";
-
-// Create a new Database instance
-$databaseObj = new Database($host, $database, $username, $password);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,6 +67,32 @@ $databaseObj = new Database($host, $database, $username, $password);
     </nav>
     <!---Nav bar End-->
     <!--Body Part Starts-->
+    <!-- Testing Part Start -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal content goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#myModal').modal('show');
+        });
+    </script>
+    <!-- Testing Part End -->
     <!--Ticket Filter Form Start-->
 
     <div class="b-example-divider"></div>
@@ -93,7 +107,7 @@ $databaseObj = new Database($host, $database, $username, $password);
                 <p>Travel with EaseTravales</p>
             </div>
             <div class="col-md-10 mx-auto col-lg-5">
-                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="FindTicketCommanUser.php" method="POST">
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="FindTicketsCommanUser.php" method="POST">
                     <div class="row">
                         <div class="col">
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Pickup Point" name="departure_location" id="departure_location">
@@ -103,10 +117,10 @@ $databaseObj = new Database($host, $database, $username, $password);
                             </select>
                         </div>
                         <div class="col">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="" id="">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="arrival_location" id="arrival_location">
                                 <option selected>Dropping Point</option>
-                                <option value="1">Badulla</option>
-                                <option value="3">Colombo</option>
+                                <option value="badulla">Badulla</option>
+                                <option value="colombo">Colombo</option>
                             </select>
                         </div>
                     </div>
@@ -114,69 +128,14 @@ $databaseObj = new Database($host, $database, $username, $password);
                         <div class="col">
                             <div class="input-group mb-3">
                                 <span class="input-group-text mt-3" id="basic-addon1">Diparture Date</span>
-                                <input type="date" class="form-control mt-3" placeholder="Departure Date" aria-label="Departure Date" aria-describedby="basic-addon1">
-
+                                <input type="date" class="form-control mt-3" placeholder="Departure Date" aria-label="Departure Date" aria-describedby="basic-addon1" name="departure_date" id="departure_date">
                             </div>
                         </div>
                     </div>
                     <hr class="my-4">
-                    <!-- Back End PHP for form Start -->
-
-                    <!-- Back End PHP for form End -->
-                    <!-- Choose Ticket poup start -->
-                    <!-- Button trigger modal -->
-                    <button type="button" class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="submit" class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="button1">
                         Find Tickets
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog FindTicketsDivPopUpWindow">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <!--Route part start-->
-                                    <div class="container my-0">
-                                        <div class="p-5 text-center bg-body-secondary rounded-3">
-                                            <h1 class="text-body-emphasis">Badulla - Colombo</h1>
-
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <table>
-                                                            <tr>
-                                                                <th>11.00 PM</th>
-                                                                <th><ion-icon name="arrow-forward"></ion-icon></th>
-                                                                <th>04.00 AM</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Badulla</td>
-                                                                <td><ion-icon name="arrow-forward"></ion-icon></td>
-                                                                <td>Colombo</td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-6 text-center">
-                                                        <h3>Super Luxuary</h3>
-                                                        <h5>UV NT-3455</h5>
-                                                    </div>
-                                                    <div class="col-3 text-center">
-                                                        <h3 class="ticketPrice">RS. 2000</h3>
-                                                        <small>Available for all Days</small>
-                                                        <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Choose Seat</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Route part End-->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Choose Ticket Poup End -->
                     <hr class="my-4 mt-2">
                     <div class="row text-center">
                         <div class="col-3"></div>
