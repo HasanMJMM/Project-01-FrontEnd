@@ -13,7 +13,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
-        /* Add your CSS styles here */
         .seat {
             position: relative;
             border: 0.1px;
@@ -23,12 +22,12 @@
             justify-content: center;
             align-items: center;
             padding: 0px;
-            background-color: lightgray;
+            background-color: #f5f5f5;
             cursor: pointer;
         }
 
         .selected-child {
-            background-color: yellow;
+            background-color: #dfff00;
         }
 
         .selected-woman {
@@ -41,7 +40,7 @@
     </style>
 </head>
 
-<body>
+<body class="bg-body-secondary">
     <!--Nav bar start-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary navBar">
 
@@ -205,8 +204,8 @@
 
                             <!--Easy Option Routes Start-->
                             <!--Route No 1 Badulla to Colombo (BTC)-->
-                            <a class="list-group-item list-group-item-action active sidebarnew1" id="list-dashBoard-list" data-bs-toggle="list" href="#list-dashBoard" role="tab" aria-controls="list-dashBoard" aria-selected="True" tabindex="-1"><span>Badulla to Colombo</span></a>
-                            <!--Route No 2 Passara to Colombo(PTC)-->
+                            <a class="list-group-item list-group-item-action sidebarnew1" id="list-dashBoard-list" data-bs-toggle="list" href="#list-dashBoard" role="tab" aria-controls="list-dashBoard" aria-selected="True" tabindex="-1"><span>Badulla to Colombo</span></a>
+                            <!--Route No 2 Passara to Colombo(CTB)-->
                             <a class="list-group-item list-group-item-action sidebarnew1" id="list-proposal-list" data-bs-toggle="list" href="#list-proposal" role="tab" aria-controls="list-proposal" aria-selected="false"><span>Colombo to Badulla</span></a>
                         </div>
                     </div>
@@ -219,89 +218,147 @@
                         <!--BTC Content Start-->
                         <div class="tab-pane fade" id="list-dashBoard" role="tabpanel" aria-labelledby="list-dashBoard-list" style="height:100%;">
                             <!--Route no1 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-secondary rounded-3">
-                                    <h1 class="text-body-emphasis">Badulla - Colombo</h1>
+                            <?php
+                            try {
+                                $db = new PDO('mysql:host=localhost;dbname=journey_ease', 'root', '');
+                                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                                // Your SQL query to select data from schedule and bus tables
+                                $sql = "SELECT schedule.*, bus.*, route.Start_Location 
+                                FROM schedule 
+                                INNER JOIN bus ON schedule.Bus_ID = bus.Bus_ID 
+                                INNER JOIN route ON schedule.Route_ID = route.Route_ID
+                                WHERE route.Start_Location = 'Badulla'";
+
+                                // Prepare and execute the query
+                                $stmt_BC = $db->prepare($sql);
+                                $stmt_BC->execute();
+
+                                // Fetch all the rows as an associative array
+                                $results = $stmt_BC->fetchAll(PDO::FETCH_ASSOC);
+
+                                // Loop through the results and print details from both tables
+                                foreach ($results as $row) {
+                                    echo '<div class="container mt-3 mb-3">';
+                            ?>
+                                    <?php echo '<div class="p-5 text-center bg-body-tertiary rounded-3">'; ?>
+                                    <h1 class="text-body-emphasis"><?php echo $row['Start_Location']; ?> - <?php echo 'Colombo'; ?></h1>
 
                                     <div class="text-center">
                                         <div class="row">
                                             <div class="col-3">
                                                 <table>
                                                     <tr>
-                                                        <th>11.00 PM</th>
+                                                        <th><?php echo $row['Departure_Time']; ?></th>
                                                         <th><ion-icon name="arrow-forward"></ion-icon></th>
-                                                        <th>04.00 AM</th>
+                                                        <th><?php echo $row['Arrival_Time']; ?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Badulla</td>
+                                                        <td><?php echo $row['Start_Location']; ?></td>
                                                         <td><ion-icon name="arrow-forward"></ion-icon></td>
-                                                        <td>Colombo</td>
+                                                        <td><?php echo 'Colombo' ?></td>
                                                     </tr>
                                                 </table>
                                             </div>
                                             <div class="col-6 text-center">
-                                                <h3>Super Luxuary</h3>
-                                                <h5>UV NT-3455</h5>
+                                                <h3><?php echo $row['Type_of_Bus']; ?></h3>
+                                                <h5><?php echo $row['Bus_Registration_Number']; ?></h5>
                                             </div>
                                             <div class="col-3 text-center">
                                                 <h3 class="ticketPrice">RS. 2000</h3>
-                                                <small>Available for all Days</small>
+                                                <small><?php echo $row['Date'] ?></small>
                                                 <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Choose Seat</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- Route No 1 End -->
-
                         </div>
+                        <?php echo '</div>'; ?>
+                        <?php echo '</br>'; ?>
+                <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo "Error: " . $e->getMessage();
+                            }
+                ?>
+                <!-- Route No 1 End -->
 
-                        <!--BTC Content End-->
-                        <!--CTB Content End-->
-                        <div class="tab-pane fade" id="list-proposal" role="tabpanel" aria-labelledby="list-proposal-list" style="height:100vh;">
-                            <!--Route no1 start-->
-                            <div class="container my-0">
-                                <div class="p-5 text-center bg-body-secondary rounded-3">
-                                    <h1 class="text-body-emphasis">Badulla - Colombo</h1>
-
-                                    <div class="text-center">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <table>
-                                                    <tr>
-                                                        <th>11.00 PM</th>
-                                                        <th><ion-icon name="arrow-forward"></ion-icon></th>
-                                                        <th>04.00 AM</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Badulla</td>
-                                                        <td><ion-icon name="arrow-forward"></ion-icon></td>
-                                                        <td>Colombo</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="col-6 text-center">
-                                                <h3>Super Luxuary</h3>
-                                                <h5>UV NT-3455</h5>
-                                            </div>
-                                            <div class="col-3 text-center">
-                                                <h3 class="ticketPrice">RS. 2000</h3>
-                                                <small>Available for all Days</small>
-                                                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Choose Seat</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Route No 1 End -->
-                        </div>
-                        <!--cTB Content End-->
-
-                        <!--new menu item end-->
                     </div>
+
+                    <!--BTC Content End-->
+                    <!--CTB Content End-->
+                    <div class="tab-pane fade" id="list-proposal" role="tabpanel" aria-labelledby="list-proposal-list" style="height:100%;">
+                        <!--Route no1 start-->
+                        <?php
+                        try {
+                            $db = new PDO('mysql:host=localhost;dbname=journey_ease', 'root', '');
+                            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                            // Your SQL query to select data from schedule and bus tables
+                            $sql = "SELECT schedule.*, bus.*, route.Start_Location 
+                                FROM schedule 
+                                INNER JOIN bus ON schedule.Bus_ID = bus.Bus_ID 
+                                INNER JOIN route ON schedule.Route_ID = route.Route_ID
+                                WHERE route.Start_Location = 'Colombo'";
+
+                            // Prepare and execute the query
+                            $stmt_CB = $db->prepare($sql);
+                            $stmt_CB->execute();
+
+                            // Fetch all the rows as an associative array
+                            $results = $stmt_CB->fetchAll(PDO::FETCH_ASSOC);
+
+                            // Loop through the results and print details from both tables
+                            foreach ($results as $row) {
+                                echo '<div class="container mt-3 mb-3">';
+                        ?>
+                                <?php echo '<div class="p-5 text-center bg-body-tertiary rounded-3">'; ?>
+                                <h1 class="text-body-emphasis"><?php echo $row['Start_Location']; ?> - <?php echo 'Badulla'; ?></h1>
+
+                                <div class="text-center">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <table>
+                                                <tr>
+                                                    <th><?php echo $row['Departure_Time']; ?></th>
+                                                    <th><ion-icon name="arrow-forward"></ion-icon></th>
+                                                    <th><?php echo $row['Arrival_Time']; ?></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><?php echo $row['Start_Location']; ?></td>
+                                                    <td><ion-icon name="arrow-forward"></ion-icon></td>
+                                                    <td><?php echo 'Badullla' ?></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-6 text-center">
+                                            <h3><?php echo $row['Type_of_Bus']; ?></h3>
+                                            <h5><?php echo $row['Bus_Registration_Number']; ?></h5>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <h3 class="ticketPrice">RS. 2000</h3>
+                                            <small><?php echo $row['Date'] ?></small>
+                                            <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Choose Seat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                    <?php echo '</div>'; ?>
+                    <?php echo '</br>'; ?>
+            <?php
+                            }
+                        } catch (PDOException $e) {
+                            echo "Error: " . $e->getMessage();
+                        }
+            ?>
+            <!-- Route No 1 End -->
                 </div>
+                <!--cTB Content End-->
+
+                <!--new menu item end-->
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <!--Find Rroute Page End-->
     <!--Easy Option Contents End-->
@@ -1050,7 +1107,7 @@
                 </div>
             </div>
             <div class="col-6 col-md">
-                <h5>Links</h5>
+                <h5 style="color: white;">Links</h5>
                 <ul class="list-unstyled text-small">
                     <li class="mb-1"><a class="nav-link" aria-current="page" href="#">
                             <span class="coustomIcon">
