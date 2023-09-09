@@ -31,7 +31,7 @@
             <h1 class="display-6"> Bus Registration</h1>
         </div>
     </div>
-    <section class="container my-2 bgdark w-50 text">
+    <section class="container my-2 bgdark w-50 text"><br><br>
         <form class="row g-3p-3">
 
             <div class="col-md-4">
