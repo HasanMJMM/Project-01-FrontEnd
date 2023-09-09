@@ -30,7 +30,10 @@
                     <h2>Journey Ease</h2>
                 </div>
                 <div>
+<main>
+                    <span>Welcome, Admin!</span>
                     <span>Welcome, [admin]!</span>
+
                 </div>
             </div>
         </div>
@@ -44,7 +47,6 @@
                 </ul>
             </div>
         </div>
-
-        
+</main>        
     </body>
     </html>
