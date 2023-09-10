@@ -62,19 +62,11 @@ user-cst/20/027
                     <input type="text area" class="form-control" id="validationCustom01" required>
 
                 </div>
-                
-
-
-
                 <br>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Confirm</button>
                 </div>
-
-
-
-
-        </section>
+            </section>
 
     </body>
 </html>
