@@ -120,9 +120,6 @@
     </script>
     <!-- Testing Part End -->
     <!--Ticket Filter Form Start-->
-
-    <div class="b-example-divider"></div>
-
     <div class="routeFilter">
         <div class="row align-items-center5">
             <div class="bannerbacgground">
@@ -155,6 +152,22 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text mt-3" id="basic-addon1">Diparture Date</span>
                                 <input type="date" class="form-control mt-3" placeholder="Departure Date" aria-label="Departure Date" aria-describedby="basic-addon1" name="departure_date" id="departure_date">
+                                <script>
+                                    // Get today's date in yyyy-mm-dd format
+                                    function getCurrentDate() {
+                                        const today = new Date();
+                                        const year = today.getFullYear();
+                                        const month = String(today.getMonth() + 1).padStart(2, '0');
+                                        const day = String(today.getDate()).padStart(2, '0');
+                                        return `${year}-${month}-${day}`;
+                                    }
+
+                                    // Set the input field value to the current date
+                                    document.getElementById('departure_date').value = getCurrentDate();
+
+                                    // Disable previous dates
+                                    document.getElementById('departure_date').min = getCurrentDate();
+                                </script>
                             </div>
                         </div>
                     </div>

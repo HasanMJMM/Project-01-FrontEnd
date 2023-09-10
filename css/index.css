@@ -124,7 +124,7 @@ body {
   border-color: black;
   background-color: rgb(56, 247, 82);
 }
-.routeFilter {
+.routeFilter {  
   margin-top: 8.5rem;
   padding: 10rem;
   background-image: url("../Images/FinalBG3.svg");
@@ -276,7 +276,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0px;
-  background-color: rgb(35, 49, 245);
+  background-color: #A2FF86;
 }
 .seatWithNumberSelectedByFemale {
   position: relative;
@@ -287,7 +287,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0px;
-  background-color: rgb(243, 13, 224);
+  background-color: #FF9EAA;
 }
 .seatWithNumberSelectedByChild {
   position: relative;
@@ -298,7 +298,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0px;
-  background-color: rgb(243, 247, 10);
+  background-color: #FFFD8C;
 }
 .displaySeatCatogery {
   display: flex;
@@ -371,4 +371,52 @@ body {
 }
 .FindTicketSubmitButton{
   visibility: hidden;
+}
+.input[type="date"]{
+  background-color: blue;
+}
+.calender{
+  background-color: #279EFF;
+  padding: 15px;  
+  transform: translate(-50%, -50%);
+  font-style: popins;
+  color: white;  
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.calenderDiv{
+  margin-left: 50%;
+  margin-top: 25rem;
+}
+.passengerCategory{
+  background-color: #279EFF;
+  padding: 15px;  
+  transform: translate(-50%, -50%);
+  font-style: popins;
+  color: white;  
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.genderSelectionDiv{
+  margin-left: 50%;
+}
+.select {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.SeatSelectionDiv{
+  background-color: #279EFF;
+  padding: 5%;  
+  border-radius: 2rem;
+
 }
