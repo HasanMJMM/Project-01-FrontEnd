@@ -29,7 +29,13 @@
                         <h2>Journey Ease</h2>
                     </div>
                     <div>
-                        <span>Welcome, Pessenger!</span>
+                        <span>Welcome <?php 
+                    if(isset($_SESSION["name"])){
+                        echo $_SESSION["name"]. ' ! ';
+                    }else{
+                        echo 'user ! ';
+                    }
+                    ?></span>
                     </div>
                 </div>
             </div>
@@ -63,7 +69,10 @@
                         <!--php-->
                         <?php
                         // $session_start();
-                        // $_SESSION['Email'] = $Email;
+                        if(isset($_SESSION["userid"])){
+
+                        }
+                        
                         require_once('../classes/dbConnectorC.php');
 
         use classes\dbconnectorC;
@@ -86,23 +95,38 @@
                                      $pstmt->execute();
                                      $result = $pstmt->fetch(PDO::FETCH_OBJ);
 
-                                    $User_ID = $result->User_ID;
-
-                                    $query1 = "INSERT INTO feedback(User_ID,Feedback)VALUES(?,?) ";
+                                    if($result){
+                                        $User_ID = $result->User_ID;
+                                        $query1 = "INSERT INTO feedback(User_ID,Feedback)VALUES(?,?) ";
 
                                     $pstmt1 = $con->prepare($query1);
                                     $pstmt1->bindValue(1, $User_ID);
                                     
                                     $pstmt1->bindValue(2, $feedback);
-                                    $pstmt1->execute();
 
-
-
-                                    if ($pstmt1) {
-                                        echo '<div class="alert alert-success"  </strong>Feedback is submitted from  ' . $Email . "Thank You!";
+                                    if ($pstmt1->execute()) {
+                                        echo '<div class="alert alert-success">Feedback is submitted from ' . $Email . ' Thank You!</div>';
                                     } else {
-                                        $errors[] = "Failed to feedback";
+                                        $errors[] = "Failed to submit feedback";
                                     }
+                                    
+
+                                    }
+                                    else {
+                                        echo '<div class="alert alert-danger" role="alert">Email not found in the database.</div>';
+                                    }
+                                    
+
+                                    
+                                   // $pstmt1->execute();
+
+
+
+                                    //if ($pstmt1) {
+                                        //echo '<div class="alert alert-success"  </strong>Feedback is submitted from  ' . $Email . "Thank You!";
+                                   // } else {
+                                        //$errors[] = "Failed to feedback";
+                                   // }
                                 }
                             }
                         }

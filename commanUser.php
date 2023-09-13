@@ -179,7 +179,7 @@
                     <div class="row text-center">
                         <div class="col-3"></div>
                         <div class="col">
-                            <a href="signinup.php">
+                            <a href="sign_in.php">
                                 <button type="button" class="btn btn-outline-success">Sign IN</button>
                             </a>
                         </div>
