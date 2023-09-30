@@ -1,3 +1,22 @@
+<?php
+// Include the file containing the DatabaseConnection class
+require_once 'classes/dbconnectorC.php';
+
+// Database connection parameters
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "journey_ease";
+
+// Create an instance of the DatabaseConnection class
+$db = new dbconnectorC($host, $username, $password, $database);
+
+?>
+<?php
+if (isset($_GET['var'])) {
+    $SHID = $_GET['var'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -266,7 +285,7 @@
 
                                     // Generate reference numbers for selected seats
                                     const referenceNumbers = Object.entries(selectedSeats).map(([seat, ageGroup]) => {
-                                        return `SH01-${seat}-${ageGroup}`;
+                                        return `<?php echo $SHID ?>-${seat}-${ageGroup}`;
                                     });
 
                                     // Update the selected seats label
@@ -275,18 +294,38 @@
                             });
                         </script>
 
+
                         <div class="checkout mt-3">
-                            <a href="checkout.php">
-                                <button class="btn btn-outline-primary"> Proceed to Checkout</button>
-                            </a>
+                            <button class="btn btn-outline-primary" onclick="test()"> Proceed to Checkout</button>
                         </div>
                     </div>
+                    <script>
+                        function test() {
+                            const labelElement = document.getElementById('selectedSeatsLabel');
+                            const labelText = labelElement.textContent;
+                            const dataArray = labelText.split(',');
+                            const SelectedSeatsArray = dataArray.map(item => item.trim());
+                            console.log("clicked");
 
+                            $.ajax({
+                                url: "testingPage.php",
+                                method: 'POST',
+                                data: {
+                                    array: SelectedSeatsArray
+                                },
+                                success: function(result) {
+                                    console.log("success");
+                                    $("#kkkkkk").html(result);
+                                }
+                            });
+
+                        }
+                    </script>
                     <br>
                 </div>
             </div>
         </div>
-
+        <div class="bg-white" id="kkkkkk"></div>
 
         <!--Seat Select POP UP End-->
         <!--Body Part End-->
@@ -304,7 +343,10 @@
                     <img class="mb-2" src="images/logo2.jpg" alt="" width="24" height="19">
                 </span>
                 <span>
-                    <p>Make Your Journy Easy</p>
+
+                    <a href=>
+                        <p>Make Your Journy Easy</p>
+                    </a>
                 </span>
                 <small class="d-block mb-3 text-body-secondary">&copy; 2017–2023</small>
                 <div class="row ">
@@ -415,7 +457,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!--Footer End-->
 </body>
 

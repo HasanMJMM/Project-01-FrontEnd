@@ -1,27 +1,41 @@
 <?php
 
-namespace classes;
-
-use PDO;
-use PDOException;
-
 class dbconnectorC {
+    private $host;
+    private $username;
+    private $password;
+    private $database;
+    private $pdo;
 
-    private $host = "localhost";
-    private $dbname = "journey_ease";
-    private $dbuser = "root";
-    private $dbpw = "";
-    private $con;
+    public function __construct($host, $username, $password, $database) {
+        $this->host = $host;
+        $this->username = $username;
+        $this->password = $password;
+        $this->database = $database;
+        $this->connect();
+    }
 
-    public function getConnection() {
-        $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbname . ";";
-
+    private function connect() {
         try {
-            $this->con = new PDO($dsn, $this->dbuser, $this->dbpw);
-            return $this->con;
+            $dsn = "mysql:host={$this->host};dbname={$this->database}";
+            $this->pdo = new PDO($dsn, $this->username, $this->password);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            die("Error" . $e->getMessage());
+            die("Database connection failed: " . $e->getMessage());
         }
     }
 
+    public function query($sql, $params = []) {
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($params);
+            return $stmt;
+        } catch (PDOException $e) {
+            die("Query failed: " . $e->getMessage());
+        }
+    }
+
+    public function close() {
+        $this->pdo = null;
+    }
 }
