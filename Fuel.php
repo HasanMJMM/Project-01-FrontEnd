@@ -34,7 +34,7 @@
     <section class="container my-2 bgdark w-50 text">
         <form class="row g-3p-3">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Bus ID</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
             </div>
@@ -48,7 +48,7 @@
 
                 </select>
             </div-->
-            <div class="col-12">
+            <div class="col-6">
                 <label for="inputAddress" class="form-label">Conductor ID</label>
                 <input type="text" class="form-control" id="inputID" >
             </div>
@@ -62,23 +62,35 @@
                 <input type="text" class="form-control" id="validationCustom02" required>
 
             </div>
+            <div class="col-md-8">
+                    <div class="input-group mb-10">
+                        <span class="input-group-text mt-3" id="basic-addon1"> Date</span>
+                        <input type="date" class="form-control mt-3" placeholder="Appoint Date"
+                            aria-label="Departure Date" aria-describedby="basic-addon1">
+
+                    </div>
+                </div>
             
 
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Travel in Km</label>
+            <div class="col-md-8">
+                <label for="inputEmail4" class="form-label">Travel in Kilometers</label>
                 <input type="text" class="form-control" id="inputmodel">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <label for="inputPassword4" class="form-label">Liters of Fuel</label>
                 <input type="text" id="inputseats" class="form-control" />
             </div>
+            <div class="col-md-8">
+                <label for="inputPassword4" class="form-label">Expence of Fuel in Rupees</label>
+                <input type="text" id="inputseats" class="form-control" />
+            </div>
 
-            <div class="col-12">
+            <div class="col-8">
                 <label for="inputAddress" class="form-label">Route ID</label>
                 <input type="text" class="form-control" id="inputID">
             </div>
 
-            <div class="col-12">
+            <div class="col-8">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
