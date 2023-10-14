@@ -85,10 +85,7 @@
                 <input type="text" id="inputseats" class="form-control" />
             </div>
 
-            <div class="col-8">
-                <label for="inputAddress" class="form-label">Route ID</label>
-                <input type="text" class="form-control" id="inputID">
-            </div>
+          
 
             <div class="col-8">
                 <button type="submit" class="btn btn-primary">Submit</button>
