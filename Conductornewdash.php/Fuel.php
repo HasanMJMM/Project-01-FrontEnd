@@ -49,16 +49,7 @@
                 </select>
             </div-->
             
-            <div class="col-md-6">
-                <label for="validationCustom01" class="form-label">Start Location</label>
-                <input type="text" class="form-control" id="validationCustom01" required>
-
-            </div>
-            <div class="col-md-6">
-                <label for="validationCustom02" class="form-label">Destination Location</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
-
-            </div>
+          
             <div class="col-md-8">
                     <div class="input-group mb-10">
                         <span class="input-group-text mt-3" id="basic-addon1"> Date</span>
