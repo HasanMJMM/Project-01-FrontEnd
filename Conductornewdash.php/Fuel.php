@@ -34,7 +34,7 @@
     <section class="container my-2 bgdark w-50 text">
         <form class="row g-3p-3">
 
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <label for="validationCustom01" class="form-label">Bus ID</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
             </div>
@@ -48,10 +48,7 @@
 
                 </select>
             </div-->
-            <div class="col-6">
-                <label for="inputAddress" class="form-label">Conductor ID</label>
-                <input type="text" class="form-control" id="inputID" >
-            </div>
+            
             <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Start Location</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
