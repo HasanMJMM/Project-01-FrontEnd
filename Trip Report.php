@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bus Journey Report</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f5f5f5;
-      }
 
-      header {
-        background-color: #ffffff;
-        color: #140505;
-        text-align: center;
-        padding: 1rem;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Journey Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
 
-      main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-      }
+    header {
+      background-color: #ffffff;
+      color: #140505;
+      text-align: center;
+      padding: 1rem;
+    }
 
-      section {
-        margin-bottom: 1.5rem;
-        border-radius: 5px;
-        background-color: #fff;
-        padding: 1.5rem;
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-      }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
 
-      h2 {
-        margin-top: 0;
-        border-bottom: 2px solid #007bff;
-        padding-bottom: 0.5rem;
-      }
+    section {
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 1.5rem;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
 
-      strong {
-        font-weight: bold;
-      }
+    h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
 
-      footer {
-        text-align: center;
-        padding: 1rem;
-        background-color: #007bff;
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Bus Journey Report</h1>
-    </header>
+    strong {
+      font-weight: bold;
+    }
 
-    <main>
+    .btn {
+
+      height: 40px;
+      width: 200px;
+      margin-top: 50px;
+      color: #007bff;
+
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Bus Journey Report</h1>
+  </header>
+
+  <main>
+    <form>
       <section>
         <h2>Journey Information</h2>
         <p><strong>Date and Time of Journey:</strong> [Date and Time]</p>
         <p><strong>Route:</strong> Badulla to Colombo</p>
         <p><strong>Bus Number:</strong> [Bus ID]</p>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
       </section>
 
       <section>
@@ -71,18 +87,29 @@
           <strong>Average Revenue per Passenger:</strong> [Revenue per
           Passenger]
         </p>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </section>
 
       <section>
         <h2>Fuel Expenses</h2>
         <p><strong>Fuel Expenses:</strong> [Fuel Expenses]</p>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </section>
 
       <section>
         <h2>Staff Information</h2>
         <p><strong>Driver:</strong> [Driver Name & Driver ID]</p>
         <p><strong>Conductor:</strong> [Conductor Name & Conductor ID]</p>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </section>
-    </main>
-  </body>
+    </form>
+  </main>
+</body>
+
 </html>
