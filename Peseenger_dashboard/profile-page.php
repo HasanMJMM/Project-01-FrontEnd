@@ -1,6 +1,4 @@
-<?php 
-session_start();
-?>
+
 <!doctype html>
 <html lang="en">
 
@@ -63,109 +61,9 @@ session_start();
                         </nav>
                     </div>
                 </div>
-                <!---profile card--->
-                <div class="row p-4">
-                    <div class="col-md-12">
-                        <!-- change password -->
-                        <div class="pb-5">
-                            <div class="card custom-card">
-                                <h5 class="card-title styled-heading p-3">Edit password</h5>
-                                <div class="card-body">
-                                    <form class="form-horizontal">
-                                        <div class="mb-4 row">
-                                            <label for="password" class="col-sm-2 col-form-label">Enter password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" class="form-control" id="password"
-                                                       placeholder="Enter Password" required>
-                                            </div>
-                                        </div>
-                                        <div class="mb-4 row">
-                                            <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm
-                                                password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" class="form-control" id="confirmPassword"
-                                                       placeholder="Confirm Password" required>
-                                            </div>
-                                        </div>
-                                        <div class="pt-3">
-                                            <button type="submit" class="btn btn-primary update-button">Update
-                                                password</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+         
                         <!-- User Detail Update Card -->
-                        <?php
-                        //$session_start();
-                        //$_SESSION['EMAIL'] = $EMAIL;
-                        if(isset($_SESSION["userid"] )){
-                            $User_ID = $_SESSION["userid"];
-
-
-                        }
-                        
-
-                        require_once('../classes/dbConnectorC.php');
-
-        use classes\dbconnectorC;
-
-
-                        $dbcon = new dbconnectorC();
-                        $con = $dbcon->getConnection();
-
-                        $query = "SELECT * FROM user WHERE User_ID=?";
-                        $pstmt = $con->prepare($query);
-                        $pstmt->bindValue(1, $User_ID);
-                         // Bind the value to the placeholder
-                         $pstmt->bindValue(2, $name);
-                         $pstmt->bindValue(3, $email);
-                         $pstmt->bindValue(4, $username);
-                         $pstmt->bindValue(5, $pwd);
-                         
-                         $pstmt->bindValue(6, $phone_no);
-                        $pstmt->execute();
-                        
-                      //  $pstmt->bindValue(1, $User_ID);
-
-                        $pstmt->execute();
-
-
-                        $result = $pstmt->fetch(PDO::FETCH_OBJ);
-
-if (!empty($result)) {
-    $username = isset($result->username) ? $result->username : '';
-    $name = isset($result->name) ? $result->name : '';
-    $email = isset($result->email) ? $result->email : '';
-    $phone_no = isset($result->phone_no) ? $result->phone_no : '';
-} else {
-}
-
-                      
-
-                        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                            if (isset($_POST['update'])) {
-                                $name = $_POST['name'];
-                                $email = $_POST['email'];
-                                $username = $_POST['username'];
-                                $phone_no = $_POST['phone_no'];
-                        
-                                // Create a new PDO statement object for the second query
-                                $pstmt2 = $con->prepare("UPDATE user SET Username=?, Name=?, Email=?, Phone_Number=?");
-                        
-                                // Bind values to the second query
-                                $pstmt2->bindValue(1, $username);
-                                $pstmt2->bindValue(2, $name);
-                                $pstmt2->bindValue(3, $email);
-                                $pstmt2->bindValue(4, $phone_no);
-                        
-                                // Execute the second query
-                                $pstmt2->execute();
-                            }
-                        }
-                         echo $username;
-                         echo "jhgfd";
-                        ?>
+                    
                         <div class="card custom-card">
                             <h5 class="card-title styled-heading p-3">Update User Details</h5>
                             <div class="card-body">
@@ -196,6 +94,22 @@ if (!empty($result)) {
                                             <div class="col-sm-10">
                                                 <input type="tel" class="form-control" id="phoneNumber"
                                                        placeholder="Enter Phone Number" name="phone_no" value="<?php echo $phone_no ?>">
+                                            </div>
+
+                                        </div>
+                                        <div class="mb-4 row">
+                                            <label for="password" class="col-sm-2 col-form-label">Enter password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="password"
+                                                       placeholder="Enter Password" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row">
+                                            <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm
+                                                password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="confirmPassword"
+                                                       placeholder="Confirm Password" required>
                                             </div>
                                         </div>
 
