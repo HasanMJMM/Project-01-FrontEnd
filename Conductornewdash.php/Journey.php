@@ -35,14 +35,11 @@
         <form class="row g-3p-3">
 
             <div class="col-md-6">
-                <label for="validationCustom01" class="form-label">Trip ID</label>
+                <label for="validationCustom01" class="form-label">Journey ID</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
             </div>
 
-            <div class="col-6">
-                <label for="inputAddress" class="form-label">Bus ID</label>
-                <input type="text" class="form-control" id="inputID" >
-            </div>
+    
             <div class="col-md-6">
                 <label for="validationCustom01" class="form-label"> Days of Journey</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
@@ -81,7 +78,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
-
+        </form>
 
 
     </section>

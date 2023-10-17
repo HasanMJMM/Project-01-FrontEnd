@@ -35,7 +35,7 @@
         <form class="row g-3p-3">
 
             <div class="col-md-6">
-                <label for="validationCustom01" class="form-label">Trip ID</label>
+                <label for="validationCustom01" class="form-label">Bus ID</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
             </div>
 

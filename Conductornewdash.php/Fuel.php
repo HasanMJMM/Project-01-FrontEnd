@@ -24,6 +24,9 @@
 
 </head>
 
+
+
+
 <body>
 
     <div class="container-fluid bg-dark text-light py-3">
@@ -32,11 +35,11 @@
         </div>
     </div>
     <section class="container my-2 bgdark w-50 text">
-        <form class="row g-3p-3">
+        <form action="Fuel.php",method="POST">
 
             <div class="col-md-8">
                 <label for="validationCustom01" class="form-label">Bus ID</label>
-                <input type="text" class="form-control" id="validationCustom01" required>
+                <input type="text" class="form-control" name="Bus_ID" id="Bus_ID" required>
             </div>
 
 
@@ -53,7 +56,7 @@
             <div class="col-md-8">
                     <div class="input-group mb-10">
                         <span class="input-group-text mt-3" id="basic-addon1"> Date</span>
-                        <input type="date" class="form-control mt-3" placeholder="Appoint Date"
+                        <input type="date" name="date" id="date" class="form-control mt-3" placeholder="Appoint Date"
                             aria-label="Departure Date" aria-describedby="basic-addon1">
 
                     </div>
@@ -62,25 +65,25 @@
 
             <div class="col-md-8">
                 <label for="inputEmail4" class="form-label">Travel in Kilometers</label>
-                <input type="text" class="form-control" id="inputmodel">
+                <input type="text" class="form-control"name="travel_in_km" id="travel_in_km">
             </div>
             <div class="col-md-8">
                 <label for="inputPassword4" class="form-label">Liters of Fuel</label>
-                <input type="text" id="inputseats" class="form-control" />
+                <input type="text"name="fuel_in_liter" id="fuel_in_liter" class="form-control" />
             </div>
             <div class="col-md-8">
                 <label for="inputPassword4" class="form-label">Expence of Fuel in Rupees</label>
-                <input type="text" id="inputseats" class="form-control" />
+                <input type="text" id="expences" name="expences"class="form-control" />
             </div>
 
           
 
             <div class="col-8">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit"name="submit" class="btn btn-primary">Submit</button>
             </div>
 
 
-
+        </form>
 
     </section>
 
