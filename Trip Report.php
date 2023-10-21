@@ -101,6 +101,14 @@
       </section>
 
       <section>
+        <h2>Other Expenses</h2>
+        <p><strong>Other Expenses:</strong> [Other Expenses]</p>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </section>
+
+      <section>
         <h2>Staff Information</h2>
         <p><strong>Driver:</strong> [Driver Name & Driver ID]</p>
         <p><strong>Conductor:</strong> [Conductor Name & Conductor ID]</p>
